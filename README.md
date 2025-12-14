@@ -1,110 +1,159 @@
-🍽️ Swiggy Food Delivery Analysis — Data Analytics & SQL Project
-📌 Project Overview
+# 🍽️ Swiggy Food Delivery Analysis | Data Analytics & SQL
 
-This project presents an end-to-end data analytics solution for analyzing Swiggy food delivery orders across multiple states, cities, and restaurants.
-A Star Schema data warehouse was designed to transform raw operational data into actionable business intelligence for revenue insights, customer behavior, and food performance analytics.
+## 📌 Project Overview
 
-🧹 1. Data Cleaning & Validation
+This project delivers an **end-to-end data analytics solution** for analyzing Swiggy food delivery orders across multiple **states, cities, restaurants, and cuisines**. The objective is to transform raw transactional data into **actionable business intelligence** using **advanced SQL** and a well-structured **Star Schema data warehouse**.
 
--- Performed detailed validation to ensure data accuracy and integrity:
+The solution enables insights into **revenue performance, customer spending behavior, food trends, and operational efficiency** through scalable dimensional modeling and analytical queries.
 
--- Conducted null checks, duplicate detection, and column-level data quality checks.
+---
 
--- Removed redundant records using ROW_NUMBER() window function.
+## 🛠️ Tools & Technologies
 
--- Handled blank / empty string fields for analytical consistency.
+* **SQL Server** – Data querying and analytics
+* **Advanced SQL** – JOINs, aggregations, window functions
+* **Data Modeling** – Star Schema (Fact & Dimension tables)
+* **Business Intelligence Concepts** – KPIs, trend analysis
 
--- Ensured reliable input for dimensional modeling and KPIs.
+---
 
-🏗️ 2. Dimensional Modeling (Star Schema)
+## 📂 Dataset Description
 
-Designed a scalable and analytics-friendly schema:
+The dataset consists of Swiggy food delivery order records containing:
 
-🔸 Dimension Tables
+* Order date and time
+* State, city, and delivery location
+* Restaurant name
+* Food category and dish name
+* Dish price (INR)
+* Customer ratings and rating counts
 
-- Dim_Date
+Each record represents a **single dish ordered** within a customer order.
 
-- Dim_Location
+---
 
-- Dim_Restaurant
+## 🧹 1. Data Cleaning & Validation
 
-- Dim_Category
+To ensure analytical accuracy and reliability, the following steps were performed:
 
-- Dim_Dish
+* Conducted **null value checks** and column-level data quality validation
+* Identified and removed **duplicate records** using `ROW_NUMBER()` window function
+* Handled **blank and empty string values** across categorical fields
+* Ensured clean, consistent data before dimensional modeling
 
-🔹 Fact Table
+✔ Result: Reliable and analysis-ready dataset
 
--Fact_Swiggy (linked using foreign keys)
+---
 
-Outcome:
-✔ Reduced redundancy
-✔ Improved query performance
-✔ Enabled fast reporting and flexible analysis
+## 🏗️ 2. Dimensional Modeling (Star Schema)
 
-📊 3. Analytics & Business Intelligence
+A scalable **Star Schema** was designed to support fast querying and flexible reporting.
 
-- Generated meaningful insights across multiple business areas:
+### 🔸 Dimension Tables
 
-📈 Key KPIs
+* **Dim_Date** – Date, month, quarter, year attributes
+* **Dim_Location** – State, city, delivery location
+* **Dim_Restaurant** – Restaurant details
+* **Dim_Category** – Food categories / cuisines
+* **Dim_Dish** – Individual dish information
 
-- Total Orders
+### 🔹 Fact Table
 
-- Total Revenue (₹ Million)
+* **Fact_Swiggy** – Central fact table storing price, ratings, and foreign keys
 
-- Average Dish Price
+### ✅ Modeling Outcomes
 
-- Average Rating
+* Reduced data redundancy
+* Improved query performance
+* Enabled efficient time, location, and product-level analysis
 
-📅 Temporal Analysis
+---
 
-- Monthly, quarterly, and yearly order trends
+## 📊 3. Analytics & Business Intelligence
 
-- Orders by Day of Week
+### 📈 Key Performance Indicators (KPIs)
 
-📍 Location-Based Insights
+* **Total Orders**
+* **Total Revenue (₹ Million)**
+* **Average Dish Price**
+* **Average Rating**
 
-- Top 10 cities by order volume
+### 📅 Temporal Analysis
 
-- State-wise revenue contribution
+* Monthly, quarterly, and yearly order trends
+* Order distribution by **day of the week**
 
-🍛 Food & Restaurant Performance
+### 📍 Location-Based Insights
 
-- Top 10 restaurants by orders
+* **Top 10 cities** by order volume
+* **State-wise revenue contribution**
 
-- Top categories by Revenue
+### 🍛 Food & Restaurant Performance
 
-- Top categories by Orders
+* Top 10 restaurants by number of orders
+* Top food categories by **revenue** and **order volume**
+* Most ordered dishes
+* Cuisine performance using **orders and average ratings**
 
-- Most Ordered Dishes
+### ⭐ Customer Spending Analysis
 
-- Cuisine Performance *Orders + Avg Rating*
+* Order distribution across price ranges:
 
-⭐ Customer Spending Insights
+  * Under ₹100
+  * ₹100–199
+  * ₹200–299
+  * ₹300–499
+  * ₹500+
 
-- Buckets of Customer Spend: under 100, 100-199, 200-299, 300-499, 500+ withtotal order distribution across these ranges
+### 🌟 Ratings Analysis
 
-📅 Ratings Analysis
+* Distribution of dish ratings (1–5)
 
-- Distribution of Dish Ratings from 1-5.
+---
 
-🛠️ 4. Technical Skills Demonstrated
+## 🛠️ 4. Technical Skills Demonstrated
 
--- Advanced SQL: JOINs, GROUP BY, aggregations
+* **Advanced SQL:** JOINs, GROUP BY, aggregations
+* **Window Functions:** ROW_NUMBER(), PARTITION BY
+* **Date Functions:** YEAR(), MONTH(), DATEPART(), DATENAME()
+* **Conditional Logic:** CASE statements
+* **Data Modeling:** Star Schema, fact & dimension table design
+* **Query Optimization:** Efficient queries for large datasets
 
--- Window Functions: ROW_NUMBER(), PARTITION BY
+---
 
--- Date Functions: YEAR(), MONTH(), DATEPART(), DATENAME()
+## 📉 5. Business Impact
 
--- Conditional Logic: CASE statements
+* Enabled **data-driven decision-making** with clean and structured data
+* Improved reporting speed and flexibility using dimensional modeling
+* Delivered clear insights into **sales trends, customer behavior, and cuisine performance**
+* Helped identify **high-performing locations, restaurants, and dishes**
 
--- Data Modeling: Star Schema, normalization, fact/dimension design
+---
 
--- Performance Optimization: Efficient queries for large datasets
+## 🚀 Future Enhancements
 
-📉 5. Business Impact
+* Integrate BI tools such as **Power BI / Tableau** for dashboarding
+* Automate ETL pipelines for real-time data updates
+* Perform customer segmentation and cohort analysis
+* Add predictive analytics for demand forecasting
 
--- Enabled data-driven decision-making with organized and clean data structures
+---
 
--- Improved reporting efficiency through optimized schema design
+## 📎 How to Use This Repository
 
--- Delivered clear visibility into sales trends, customer behavior, and operational performance
+1. Review SQL scripts for data cleaning, modeling, and analysis
+2. Explore schema design for understanding dimensional modeling
+3. Use analytical queries and insights for interview discussions or business case studies
+
+---
+
+## 👤 Author
+
+**Subhash Naidu Gogineni**
+Aspiring Data Analyst / Data Science Intern
+
+---
+
+⭐ If you found this project insightful, consider starring the repository!
+
